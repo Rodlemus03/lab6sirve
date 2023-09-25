@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.lab6si.R
 import com.example.lab6si.navigation.AppNavigation
+import com.example.lab6si.navigation.AppScreens
 
 @Composable
 fun SecondScreen(navController:NavController){
@@ -53,6 +54,7 @@ fun SecondBodyContent(navController: NavController,concertTitle: String,concertD
             ) {
                 Text(
                     text = concertTitle,
+                    color = Color.Black,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(bottom = 8.dp)
@@ -65,14 +67,26 @@ fun SecondBodyContent(navController: NavController,concertTitle: String,concertD
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
 
+
                 Text(
                     text = concertDescription,
+                    color = Color.Black,
                     fontSize = 16.sp,
                     modifier = Modifier
-                        .fillMaxHeight()
                         .fillMaxWidth()
+
+
+
                 )
+                Button(onClick = {
+                    navController.popBackStack()
+                }){
+                    Text(text = "regresar")
+                }
+
+
             }
+
         }
 
 
