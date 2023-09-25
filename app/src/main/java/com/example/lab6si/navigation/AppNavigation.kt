@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.lab6si.screen.FirstScreen
+import com.example.lab6si.screen.FourthScreen
 import com.example.lab6si.screen.SecondScreen
 import com.example.lab6si.screen.ThirdScreen
 
@@ -21,7 +22,9 @@ fun AppNavigation(){
         }
         composable(route=AppScreens.ThirdScreen.ruta){
             ThirdScreen(navController)
-
+        }
+        composable(route=AppScreens.FourthScreen.ruta){
+            FourthScreen(navController)
         }
         
 

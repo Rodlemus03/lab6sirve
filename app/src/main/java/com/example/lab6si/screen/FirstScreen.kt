@@ -93,8 +93,7 @@ fun bodyContent(navController:NavController){
 
                     Button(
                         onClick = {
-                            // Agrega la navegación a la pantalla de perfil aquí
-                           // navController.navigate(route = AppScreens.PerfilScreen.ruta)
+                           navController.navigate(route = AppScreens.FourthScreen.ruta)
                         },
                         modifier = Modifier.weight(1f)
                     ) {
