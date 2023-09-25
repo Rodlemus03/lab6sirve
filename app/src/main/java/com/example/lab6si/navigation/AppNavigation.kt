@@ -7,13 +7,18 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.lab6si.screen.FirstScreen
 import com.example.lab6si.screen.FourthScreen
+import com.example.lab6si.screen.LoginScreen
 import com.example.lab6si.screen.SecondScreen
 import com.example.lab6si.screen.ThirdScreen
 
 @Composable
 fun AppNavigation(){
     val navController= rememberNavController()
-    NavHost(navController = navController, startDestination = AppScreens.FirstScreen.ruta){
+    NavHost(navController = navController, startDestination = AppScreens.loginScreen.ruta){
+        composable(route=AppScreens.loginScreen.ruta){
+            LoginScreen(navController)
+        }
+
         composable(route=AppScreens.FirstScreen.ruta){
             FirstScreen(navController)
         }
