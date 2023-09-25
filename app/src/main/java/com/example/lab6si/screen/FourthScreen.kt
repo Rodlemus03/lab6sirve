@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
@@ -39,6 +40,8 @@ fun FourthScreen(navController: NavController){
 }
 
 data class UserProfile(val name: String, val photoResId: Int)
+
+
 
 @Composable
 fun FourthBodyContent(navController: NavController) {
@@ -103,10 +106,25 @@ fun FourthBodyContent(navController: NavController) {
 
         }
 
+        // Boton para editar (centrado)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Button(
+                onClick = {
+                    navController.popBackStack()
+                }
+            ) {
+                Text(text = "Regresar")
+            }
+        }
+
         Spacer(modifier = Modifier.height(16.dp))
     }
 }
-
 
 @Composable
 fun ProfileOptionItem(text: String, onClick: () -> Unit) {
